@@ -1,0 +1,25 @@
+{
+  "name": "ejemplo-03-data-prisma-sqlite",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "prisma": "prisma",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@prisma/client": "^5.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.23",
+    "prisma": "^5.15.0"
+  }
+}

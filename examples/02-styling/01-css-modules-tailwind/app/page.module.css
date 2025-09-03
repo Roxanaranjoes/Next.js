@@ -1,0 +1,2 @@
+.card { @apply p-4 rounded border border-neutral-800 bg-neutral-900 text-white; }
+.title { @apply text-2xl font-bold; }
