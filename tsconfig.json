@@ -15,5 +15,12 @@
     "types": ["node"],
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules", "**/node_modules", "**/.next", "**/dist"]
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "**/.next",
+    "**/dist",
+    "examples",
+    "snippets"
+  ]
 }

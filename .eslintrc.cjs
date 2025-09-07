@@ -13,7 +13,13 @@ module.exports = {
   settings: {
     react: { version: "detect" }
   },
-  ignorePatterns: ["**/.next/**", "**/dist/**", "**/node_modules/**"],
+  ignorePatterns: [
+    "**/.next/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "examples/**",
+    "snippets/**"
+  ],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
