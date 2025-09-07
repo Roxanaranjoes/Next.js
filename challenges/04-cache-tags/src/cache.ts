@@ -1,7 +1,7 @@
-const store = new Map<string, any>();
+const store = new Map<string, unknown>();
 const tagIndex = new Map<string, Set<string>>();
 
-export function cached<TArgs extends any[], TResult>(
+export function cached<TArgs extends unknown[], TResult>(
   key: string,
   tags: string[],
   fn: (...args: TArgs) => Promise<TResult>
