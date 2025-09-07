@@ -1,68 +1,65 @@
 # nextjs-mastery-es
 
-Repositorio educativo (en español) para aprender Next.js (App Router) desde cero hasta avanzado. Diseñado para principiantes con explicaciones paso a paso y para perfiles intermedios que buscan profundidad técnica.
+Repositorio educativo (en español) para aprender Next.js (App Router) desde cero hasta avanzado. Pensado para principiantes con guías paso a paso y para perfiles intermedios que buscan profundidad técnica.
 
 - Tecnologías: Next.js (App Router, Server Components, Route Handlers, Server Actions), TypeScript, Node 18+, pnpm, Tailwind opcional.
-- Incluye: lecciones con secciones didácticas fijas, ejemplos ejecutables por lección, snippets, proyectos guiados, retos con tests, checklists, docs y CI.
+- Incluye: lecciones, ejemplos ejecutables por lección, snippets, proyectos guiados, retos con tests, checklists, docs y CI.
 
 ## Requisitos
 - Node.js 18+ (recomendado 20)
-- pnpm 8+
+- pnpm 8+ (en raíz se usa pnpm 8.15.0)
 
 ## Instalación rápida (raíz)
-- Este repo no es una app única, sino un compendio. Cada ejemplo bajo `examples/` es una app Next.js separada con su propio `package.json`.
-- Para ejecutar un ejemplo: ver su `README.md` dentro de la carpeta del ejemplo.
+- Este repo no es una única app, sino un compendio. Cada ejemplo en `examples/` es una app Next.js independiente con su propio `package.json`.
+- Para ejecutar un ejemplo, entra a su carpeta y sigue su README.
 
 ## Estructura
-- 00-setup
-- 01-fundamentals
-- 02-styling
-- 03-data
-- 04-auth
-- 05-advanced
-- 06-testing
-- 07-deploy
-- projects/
-- snippets/
-- challenges/
-- checklists/
-- examples/
-- docs/
-
-## Tabla de contenidos
-- Módulo 00 — Setup: `00-setup/`
-- Módulo 01 — Fundamentos: `01-fundamentals/`
-- Módulo 02 — Estilos: `02-styling/`
-- Módulo 03 — Datos: `03-data/`
-- Módulo 04 — Auth: `04-auth/`
-- Módulo 05 — Avanzado: `05-advanced/`
-- Módulo 06 — Testing: `06-testing/`
-- Módulo 07 — Deploy: `07-deploy/`
-- Snippets reutilizables: `snippets/`
-- Retos prácticos con tests: `challenges/`
-- Proyectos guiados: `projects/`
-- Documentos de apoyo: `docs/`
-- Checklist de calidad: `checklists/feature-readiness.md`
+- 00-setup — Introducción e instalación.
+- 01-fundamentals — Fundamentos de App Router.
+- 02-styling — CSS Modules, Tailwind, etc.
+- 03-data — Datos, fetch, Prisma.
+- 04-auth — Autenticación con NextAuth.
+- 05-advanced — Streaming, ISR, Edge.
+- 06-testing — Vitest, RTL, Playwright.
+- 07-deploy — Despliegue (Vercel, etc.).
+- challenges/ — Retos prácticos con tests.
+- snippets/ — Fragmentos reutilizables.
+- projects/ — Proyectos guiados.
+- examples/ — Apps de ejemplo por lección.
+- checklists/ — Listas de verificación.
+- docs/ — Documentos de apoyo.
 
 ## Cómo usar este repo
-- Lee cada lección en orden. Cada una incluye: objetivo, prerequisitos, diagrama ASCII, conceptos clave, paso a paso, ejemplo mínimo runnable, errores comunes, tips de performance/SEO/A11y, ejercicios (con soluciones), quiz y referencias.
-- Ejecuta el ejemplo asociado a cada lección bajo `examples/<modulo>/<leccion>/`.
+- Sigue los módulos en orden. Cada lección incluye objetivo, prerequisitos, conceptos clave, paso a paso, ejemplo mínimo runnable, errores comunes, tips de performance/SEO/A11y y ejercicios.
+- Ejecuta el ejemplo asociado a cada lección en `examples/<módulo>/<lección>/`.
 - Usa `snippets/` como referencia rápida de patrones.
 
 ## Scripts (raíz)
-- `pnpm typecheck`: verificación de tipos (TS) del repo.
-- `pnpm lint`: linting con ESLint.
-- `pnpm fmt`: chequeo de formato Prettier.
-- `pnpm fmt:write`: aplicar formato.
-- `pnpm test`: ejecutar tests (retos, ejemplos con pruebas);
-- `pnpm e2e`: Playwright (en ejemplos/proyectos que lo incluyan).
+- `pnpm typecheck`: verificación de tipos del monorepo (excluye `examples/` y `snippets/`).
+- `pnpm lint`: linting con ESLint (ignora `examples/` y `snippets/`).
+- `pnpm fmt`: chequeo de formato con Prettier.
+- `pnpm fmt:write`: aplica formato.
+- `pnpm test`: ejecuta tests de retos en `challenges/**/tests/**/*.test.ts` (Vitest).
+- `pnpm e2e`: Playwright (solo en ejemplos/proyectos que lo incluyan).
 
-Nota: muchos tests residen dentro de ejemplos/proyectos; ejecuta sus scripts locales según su `README.md`.
+Notas
+- Los ejemplos requieren instalar sus dependencias dentro de cada carpeta. Usa sus scripts locales (`pnpm install`, `pnpm dev`).
+- Para correr un test específico de retos: `pnpm test -t "<nombre o regex>"`.
+
+## CI/CD
+- Workflow: `.github/workflows/ci.yml` (Node 20 + pnpm 8.15.0).
+- Se ejecutan `typecheck`, `lint` y `test` en la raíz con el alcance descrito arriba.
+- Caché de pnpm desactivada hasta añadir `pnpm-lock.yaml` en raíz. Recomendado crear el lockfile para habilitar caché.
+
+## Recomendaciones
+- Usa un Node version manager (fnm, nvm) para fijar Node 20.
+- Genera `pnpm-lock.yaml` en raíz para mejorar tiempos de CI: `pnpm install` y commitea el lock.
 
 ## Roadmap
 - [x] Estructura base y CI
-- [ ] Completar y ampliar proyectos guiados
-- [ ] Añadir más retos y pruebas E2E
+- [ ] Ampliar proyectos guiados
+- [ ] Añadir más retos y E2E
 
 ## Licencia
 MIT — ver `LICENSE`.
+
